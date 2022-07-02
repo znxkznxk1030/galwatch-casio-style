@@ -4,7 +4,34 @@
   /* 이런식으로 weight를 지정해서 사용할 수도 있다!*/
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,400;1,500;1,600&display=swap');
+@font-face {
+  font-family: "Eurostile";
+  src: url("./font/Eurostile.ttf") format("truetype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "EurostileExtended";
+  src: url("./font/eurostile_extended_black.ttf") format("truetype");
+
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "Eurostile";
+  src: url("./font/EurostileBold.ttf") format("truetype");
+  font-style: bold;
+}
+
+@font-face {
+  font-family: "Eurostile";
+  src: url("./font/EurostileOblique.ttf") format("truetype");
+  font-style: oblique;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,400;1,500;1,600&display=swap");
 
 :root {
   --clock-black: #3c3c3c;
@@ -33,16 +60,18 @@ body {
 }
 
 .border {
-  height: 63%;
-  width: 82%;
-  border-radius: 20%;
+  height: 70%;
+  width: 76%;
+  border-radius: 15%;
   border: var(--casio-blue) 3px solid;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
-  padding: 0;
+  /* background-image: url(../images/casio-border.png); */
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .border::after {
@@ -50,40 +79,50 @@ body {
   content: "";
   height: 93%;
   width: 95%;
-  border-radius: 20%;
-  border: #a3a7a6 3px solid;
+  border-radius: 15%;
+  border: #faf9f6 3px solid;
   display: flex;
 }
 
 .header {
   width: 63%;
-  height: 25%;
+  height: 21%;
   /* border: #a3a7a6 1px solid; */
+  font-family: "Eurostile";
 }
 
 .header-logo {
   color: aliceblue;
   margin-top: 3px;
+  font-family: "EurostileExtended", sans-serif;
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+}
+
+.logo-gold {
+  font-family: "Eurostile";
+  font-size: 7px;
+  color: #93753a;
+  letter-spacing: 1px;
 }
 
 .header-description {
   background-color: var(--casio-blue);
   margin-top: 3px;
-  margin-left: 18px;
+  margin-left: 17px;
   height: 17px;
-  width: 157px;
+  width: 150px;
   padding-top: 1px;
   padding-bottom: 1px;
-  padding-left: 13px;
+  padding-left: 7px;
   position: relative;
 
   color: #c4c8d1;
-  font-family: 'Poppins', sans-serif;
   font-size: 10.5px;
   font-style: italic;
   font-weight: bold;
   letter-spacing: 1px;
-
 }
 
 .header-description-bigletter {
@@ -91,7 +130,7 @@ body {
 }
 
 .header-description::before {
-  content: '';
+  content: "";
   /* background-color: var(--casio-blue); */
   position: absolute;
   top: 0;
