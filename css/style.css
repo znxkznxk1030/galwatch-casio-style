@@ -36,6 +36,9 @@
 :root {
   --clock-black: #3c3c3c;
   --casio-blue: #103a60;
+  --clock-size: 400%;
+  --casio-red: #d62411;
+  --casio-gold: #93753a;
 }
 
 body {
@@ -103,7 +106,7 @@ body {
 .logo-gold {
   font-family: "Eurostile";
   font-size: 7px;
-  color: #93753a;
+  color: var(--casio-gold);
   letter-spacing: 1px;
 }
 
@@ -150,7 +153,87 @@ body {
 .footer {
   width: 63%;
   height: 25%;
-  border: #a3a7a6 1px solid;
+  /* border: #a3a7a6 1px solid; */
+  font-family: "EurostileExtended", sans-serif;
+}
+
+.footer-illuminator {
+  width: 100%;
+  height: 50%;
+  /* border: #a3a7a6 1px solid; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-illuminator-text {
+  color: var(--casio-red);
+  font-size: 70%;
+  font-style: italic;
+  font-weight: bold;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.footer-illuminator-text::before {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: -15px;
+
+  width: 0px;
+  height: 0px;
+  background-color: transparent;
+  border-top: 5px solid transparent;
+  border-right: 13px solid var(--casio-red);
+  border-left: 0px solid transparent;
+  border-bottom: 4px solid transparent;
+  transform: rotate(7deg);
+  
+}
+
+.footer-illuminator-text::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  right: -15px;
+
+  width: 0px;
+  height: 0px;
+  background-color: transparent;
+  border-top: 4px solid transparent;
+  border-right: 0px solid transparent;
+  border-left: 13px solid var(--casio-red);
+  border-bottom: 5px solid transparent;
+  transform: rotate(7deg);
+}
+
+
+.footer-water-resist {
+  width: 100%;
+  height: 50%;
+  /* border: #a3a7a6 1px solid; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   position: relative;
+}
+
+.footer-water-resist-text {
+  color: var(--casio-gold);
+  font-size: 70%;
+  font-style: italic;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.footer-water-resist::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 115%;
+  height: 1.5px;
+  background-color: #fff;
 }
 
 /* #battery-rec {
@@ -176,37 +259,40 @@ body {
 hour&minutes
 */
 
-#rec-time {
+.rec-body {
   width: 63%;
   height: 35%;
   background-color: #ced5cd;
   display: flex;
-  justify-content: right;
+  justify-content: center;
+  align-items: center;
   border-radius: 5%;
   padding: 4px;
   font-family: "DigitalDismay";
 }
 
+#rec-time {
+  /* border: #fff 3px solid; */
+  display: flex;
+}
+
 #str-hours {
-  font-size: 400%;
-  float: left;
+  font-size: var(--clock-size);
   color: var(--clock-black);
 }
 
 #str-console {
-  font-size: 400%;
-  float: left;
+  font-size: var(--clock-size);
   color: var(--clock-black);
 }
 
 #str-minutes {
-  font-size: 400%;
-  float: left;
+  font-size: var(--clock-size);
   color: var(--clock-black);
 }
 
 #str-ampm {
-  font-size: 200%;
+  font-size: var(--clock-size);
   color: black;
   padding-top: var(--clock-black);
 }
@@ -220,6 +306,7 @@ string day & month
   height: 30%;
   top: 60%;
   left: 24%;
+  /* color: var(--casio-red) */
 }
 
 #str-day {
@@ -228,20 +315,13 @@ string day & month
   float: left;
 }
 
-@media screen and (-tizen-geometric-shape: circle) {
-  #str-hours {
-    font-size: 600%;
+/* @media screen and (-tizen-geometric-shape: circle) {
+  #rec-time {
+    display: flex;
+    justify-content: right;
+    align-items: center;
   }
-
-  #str-console {
-    font-size: 600%;
-  }
-
-  #str-minutes {
-    font-size: 600%;
-  }
-
   #rec-string-time {
     left: 80px;
   }
-}
+} */
