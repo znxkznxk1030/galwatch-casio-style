@@ -36,7 +36,8 @@
 :root {
   --clock-black: #3c3c3c;
   --casio-blue: #103a60;
-  --clock-size: 400%;
+  --clock-size: 320%;
+  --clock-second-size: 220%;
   --casio-red: #d62411;
   --casio-gold: #93753a;
 }
@@ -236,39 +237,37 @@ body {
   background-color: #fff;
 }
 
-/* #battery-rec {
-  position: absolute;
-  width: 10%;
-  height: 5%;
-  top: 20%;
-  left: 63%;
-  border: solid 2px white;
-}
-
-#battery-fill {
-  position: absolute;
-  width: 11%;
-  height: 6%;
-  top: 20%;
-  left: 63%;
-  z-index: 10;
-  background-color: white;
-} */
-
-/*
-hour&minutes
-*/
-
 .rec-body {
   width: 63%;
   height: 35%;
   background-color: #ced5cd;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   border-radius: 5%;
   padding: 4px;
   font-family: "DigitalDismay";
+  border: #000 3px solid;
+}
+
+#rec-header {
+  width: 100%;
+  height: 20px;
+  display: flex;
+  justify-content: space-around;
+  
+  /* border: #fff 3px dotted; */
+}
+
+#str-day {
+  font-size: 20px;
+  color: var(--clock-black);
+}
+
+#battery-fill {
+  font-size: 20px;
+  color: var(--clock-black);
 }
 
 #rec-time {
@@ -276,9 +275,14 @@ hour&minutes
   display: flex;
 }
 
+/* #rec-time > div {
+  height: 60px;
+} */
+
 #str-hours {
   font-size: var(--clock-size);
   color: var(--clock-black);
+  padding: 0;
 }
 
 #str-console {
@@ -291,10 +295,19 @@ hour&minutes
   color: var(--clock-black);
 }
 
+#str-seconds {
+  font-size: var(--clock-second-size);
+  color: var(--clock-black);
+  padding-top: 15px;
+  padding-left: 2px;
+}
+
+
 #str-ampm {
   font-size: var(--clock-size);
   color: black;
   padding-top: var(--clock-black);
+   border: #000 3px solid;
 }
 
 /*
@@ -307,12 +320,6 @@ string day & month
   top: 60%;
   left: 24%;
   /* color: var(--casio-red) */
-}
-
-#str-day {
-  font-size: 250%;
-  color: white;
-  float: left;
 }
 
 /* @media screen and (-tizen-geometric-shape: circle) {
