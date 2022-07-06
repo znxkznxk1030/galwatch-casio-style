@@ -162,10 +162,10 @@
    * @private
    */
   function getBatteryState() {
-    var batteryLevel = Math.floor(battery.level * 10),
+    var batteryLevel = Math.floor(battery.level * 100),
       batteryFill = document.getElementById("battery-fill");
 
-      batteryFill.innerHTML = batteryLevel + "%";
+      batteryFill.innerHTML = batteryLevel + "";
   }
 
   /**
